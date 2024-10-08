@@ -1,0 +1,43 @@
+---
+---
+<section id="about" class="section">
+	<div class="container">
+		<h2>About Me</h2>
+		<div class="about-content">
+			<div class="about-text">
+				<p>Hello! Soy Lener.</p>
+				<p>Profesional en Ingeniería de Sistemas con 2+ años de experiencia en análisis de datos, gestión de proyectos y 
+soporte de IT. Con conocimientos en la gestión, análisis, ingesta e interpretación de datos. Con alto sentido de 
+responsabilidad, adaptabilidad, organización, trabajo en equipo y comunicación.
+</p>
+				<a href="../public/LenerCrisologoNarro.pdf"target="_blank" class="btn btn-primary">Ver CV</a>
+			</div>
+			<div class="about-image">
+				<img src="../public/Perfil.jpeg" alt="perfil">
+			</div>
+		</div>
+	</div>
+</section>
+
+<style>
+	.about-content {
+		display: flex;
+		align-items: center;
+		gap: 2rem;
+	}
+	.about-text {
+		flex: 1;
+	}
+	.about-image {
+		flex: 1;
+	}
+	.about-image img {
+		border-radius: 50%;
+		box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+	}
+	@media (max-width: 768px) {
+		.about-content {
+			flex-direction: column-reverse;
+		}
+	}
+</style>

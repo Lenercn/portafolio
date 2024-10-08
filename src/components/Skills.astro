@@ -1,0 +1,78 @@
+---
+const skills = [
+	{ name: "Python", icon: "laptop-code" },
+	{ name: "Numpy", icon: "chart-bar" },
+	{ name: "Pandas", icon: "table" },
+	{ name: "Scala", icon: "code" },
+	{ name: "Spark", icon: "bolt" },
+	{ name: "Excel", icon: "file-excel" },
+	{ name: "AWS", icon: "fingerprint" },
+	{ name: "Azure", icon: "cloud" },
+	{ name: "Git", icon: "share-alt-square" },
+	{ name: "SQL", icon: "database" },
+	{ name: "Oracle", icon: "database" },
+	{ name: "PowerApps", icon: "mobile-alt" },
+	{ name: "Power Automate", icon: "cogs" },
+	{ name: "Power BI", icon: "chart-line" },
+	{ name: "Tableau", icon: "chart-pie" },
+	{ name: "Metodologías ágiles", icon: "project-diagram" },
+	{ name: "Trello", icon: "tasks" },
+	{ name: "Scrum", icon: "users" }
+
+];
+---
+<section id="skills" class="section">
+	<div class="container">
+		<h2>My Skills</h2>
+		<ul class="skills-list">
+			{skills.map(skill => (
+				<li>
+					<i class={`fas fa-${skill.icon}`}></i>
+					<span>{skill.name}</span>
+				</li>
+			))}
+		</ul>
+	</div>
+</section>
+
+<style>
+	.skills-list {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 1.5rem;
+		padding: 0;
+		list-style-type: none;
+	}
+	.skills-list li {
+		background-color: var(--card-background);
+		color: var(--text-color);
+		padding: 1rem;
+		border-radius: 10px;
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+		box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+		transition: transform 0.3s ease, box-shadow 0.3s ease;
+		width: calc(33.333% - 1rem);
+	}
+	.skills-list li:hover {
+		transform: translateY(-3px);
+		box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+	}
+	.skills-list i {
+		font-size: 1.5rem;
+		color: var(--primary-color);
+		width: 30px;
+		text-align: center;
+	}
+	@media (max-width: 768px) {
+		.skills-list li {
+			width: calc(50% - 0.75rem);
+		}
+	}
+	@media (max-width: 480px) {
+		.skills-list li {
+			width: 100%;
+		}
+	}
+</style>

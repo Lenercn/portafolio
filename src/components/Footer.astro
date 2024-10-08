@@ -1,0 +1,48 @@
+---
+const currentYear = new Date().getFullYear();
+---
+<footer>
+	<div class="container">
+		<p>&copy; {currentYear} Lener. All rights reserved.</p>
+		<nav>
+			<a href="#about">About</a>
+			<a href="#projects">Projects</a>
+			<a href="#skills">Skills</a>
+		</nav>
+	</div>
+</footer>
+
+<style>
+	footer {
+		background-color: var(--primary-color);
+		color: white;
+		padding: 2rem 0;
+		margin-top: 2rem;
+	}
+	.container {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	nav a {
+		color: white;
+		text-decoration: none;
+		margin-left: 1rem;
+		transition: opacity 0.3s ease;
+	}
+	nav a:hover {
+		opacity: 0.8;
+	}
+	@media (max-width: 768px) {
+		.container {
+			flex-direction: column;
+			text-align: center;
+		}
+		nav {
+			margin-top: 1rem;
+		}
+		nav a {
+			margin: 0 0.5rem;
+		}
+	}
+</style>

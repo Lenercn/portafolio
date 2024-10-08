@@ -1,0 +1,103 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="My Portfolio Website" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+	</head>
+	<body>
+		<Header />
+		<main>
+			<slot />
+		</main>
+		<Footer />
+		<div class="floating-social-buttons">
+			<a href="https://github.com/lenercn" target="_blank" rel="noopener noreferrer" class="social-button github">
+				<i class="fab fa-github"></i>
+			</a>
+			<a href="https://www.linkedin.com/in/Lenercn" target="_blank" rel="noopener noreferrer" class="social-button linkedin">
+				<i class="fab fa-linkedin-in"></i>
+			</a>
+			<a href="https://wa.me/+51976411784?text=Hola Vengo de portafolio" target="_blank" rel="noopener noreferrer" class="social-button whatsapp">
+				<i class="fab fa-whatsapp"></i>
+			</a>
+		</div>
+	</body>
+</html>
+<style is:global>
+	:root {
+		--primary-color: #3a86ff;
+		--secondary-color: #8338ec;
+		--accent-color: #ff006e;
+		--text-color: #2b2d42;
+		--background-color: #f8f9fa;
+		--card-background: #ffffff;
+	}
+	html {
+		font-family: 'Poppins', sans-serif;
+		background: var(--background-color);
+		color: var(--text-color);
+		scroll-behavior: smooth;
+	}
+	body {
+		margin: 0;
+		padding: 0;
+		line-height: 1.6;
+	}
+	main {
+		max-width: 0 auto;
+		margin: 0 auto;
+		padding: 1rem;
+	}
+	.floating-social-buttons {
+		position: fixed;
+		right: 20px;
+		top: 78%;
+		transform: translateY(-50%);
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+		z-index: 1000;
+	}
+	.social-button {
+		width: 50px;
+		height: 50px;
+		border-radius: 30%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		color: white;
+		font-size: 24px;
+		transition: all 0.3s ease;
+		box-shadow: 0 2px 15px rgba(0, 0, 0, 0.12);
+	}
+	.social-button:hover {
+		transform: scale(1.1);
+	}
+	.github {
+		background-color: #333;
+	}
+	.linkedin {
+		background-color: #0077B5;
+	}
+	.whatsapp {
+		background-color: #25D366;
+	}
+</style>

@@ -1,0 +1,69 @@
+---
+const testimonials = [
+	{
+		name: "John Doe",
+		company: "Tech Co.",
+		quote: "Working with [Your Name] was a great experience. Their expertise and dedication to the project were outstanding."
+	},
+	{
+		name: "Jane Smith",
+		company: "Design Studio",
+		quote: "[Your Name] delivered a beautiful and functional website that exceeded our expectations. Highly recommended!"
+	},
+	{
+		name: "Mike Johnson",
+		company: "StartUp Inc.",
+		quote: "The attention to detail and problem-solving skills of [Your Name] are truly impressive. They're a valuable asset to any team."
+	}
+];
+---
+<section id="testimonials" class="section">
+	<div class="container">
+		<h2>What People Say</h2>
+		<div class="testimonial-grid">
+			{testimonials.map(testimonial => (
+				<div class="testimonial-card">
+					<blockquote>"{testimonial.quote}"</blockquote>
+					<p class="author">- {testimonial.name}, {testimonial.company}</p>
+				</div>
+			))}
+		</div>
+	</div>
+</section>
+
+<style>
+	.testimonial-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		gap: 2rem;
+	}
+	.testimonial-card {
+		background-color: var(--card-background);
+		border-radius: 10px;
+		padding: 2rem;
+		box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+		transition: transform 0.3s ease;
+	}
+	.testimonial-card:hover {
+		transform: translateY(-5px);
+	}
+	blockquote {
+		font-style: italic;
+		margin-bottom: 1rem;
+		position: relative;
+	}
+	blockquote::before {
+		content: '"';
+		font-size: 4rem;
+		position: absolute;
+		left: -1rem;
+		top: -1rem;
+		opacity: 0.1;
+		color: var(--primary-color);
+	}
+	.author {
+		text-align: right;
+		font-weight: 600;
+		color: var(--primary-color);
+	}
+</style>

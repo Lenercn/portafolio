@@ -1,0 +1,41 @@
+---
+import Layout from '../layouts/Layout.astro';
+import About from '../components/About.astro';
+import Projects from '../components/Projects.astro';
+import Skills from '../components/Skills.astro';
+import Contact from '../components/Contact.astro';
+import Testimonials from '../components/Testimonials.astro';
+---
+
+<Layout title="Lener- Portfolio">
+	<section class="hero section">
+		<div class="container">
+			<h1 class="fade-in">Welcome to My Portfolio</h1>
+			<p class="fade-inp" >“I am passionate about technology and create incredible experiences.”</p>
+			<a href="#contact" class="btn btn-primary">Get in Touch</a>
+		</div>
+
+</section>
+	</section>
+	<About />
+	<Projects />
+	<Skills />
+	<Testimonials />
+	<Contact />
+</Layout>
+
+<style>
+	.hero {
+		text-align: center;
+		padding: 8rem 0;
+		background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+		color: white;
+	}
+	.hero h1 {
+		margin-bottom: 1rem;
+	}
+	.hero p {
+		font-size: 1.2rem;
+		margin-bottom: 2rem;
+	}
+</style>
